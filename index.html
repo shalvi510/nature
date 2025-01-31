@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .fact-display {
+            margin: 20px 0;
+            font-size: 1.2em;
+            min-height: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Nature Fact</h1>
+        <div id="factDisplay" class="fact-display"></div>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                title: "Biodiversity",
+                description: "Earth is home to an estimated 8.7 million species of plants and animals, with about 80% of them still undiscovered."
+            },
+            {
+                title: "Oxygen Production",
+                description: "Approximately 50% of the Earth's oxygen is produced by phytoplankton in the oceans."
+            },
+            {
+                title: "Oldest Living Organism",
+                description: "The oldest known living organism is a bristlecone pine tree in California, estimated to be over 4,800 years old."
+            },
+            {
+                title: "Water Coverage",
+                description: "About 71% of the Earth's surface is covered by water, with the oceans holding about 96.5% of that water."
+            },
+            {
+                title: "Photosynthesis",
+                description: "Plants convert sunlight into energy through photosynthesis, which not only fuels their growth but also produces oxygen as a byproduct."
+            },
+            {
+                title: "Coral Reefs",
+                description: "Coral reefs are one of the most diverse ecosystems on the planet, supporting about 25% of all marine species."
+            },
+            {
+                title: "Migration",
+                description: "The Arctic Tern holds the record for the longest migration of any animal, traveling about 71,000 kilometers (44,000 miles) each year between its breeding and wintering grounds."
+            },
+            {
+                title: "Soil Composition",
+                description: "Healthy soil is made up of about 45% minerals, 25% water, 25% air, and 5% organic matter, which is crucial for plant growth."
+            },
+            {
+                title: "Tree Communication",
+                description: "Trees can communicate with each other through a network of fungi in the soil, sharing nutrients and warning each other of pests."
+            },
+            {
+                title: "Natural Disasters",
+                description: "Nature can be both beautiful and destructive; events like earthquakes, hurricanes, and wildfires are natural phenomena that can have significant impacts on ecosystems and human life."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById('factDisplay').innerHTML = `<strong>${fact.title}</strong>: ${fact.description}`;
+        });
+    </script>
+</body>
+</html>
